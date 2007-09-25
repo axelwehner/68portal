@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="template">
+	<name>68portal</name>
+	<version>1.3</version>
+	<creationDate>25 September 2007</creationDate>
+	<author>Axel Wehner</author>
+	<authorEmail>aw@68media.de</authorEmail>
+	<authorUrl>http://www.68media.de</authorUrl>
+	<copyright>Axel Wehner</copyright>
+	<license>GNU/GPL v2</license>
+	<description>68portal - Joomla! 1.5 Contest Template</description>
+
+	<files>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>images_general</folder>
+		<filename>component.php</filename>
+		<filename>favicon.ico</filename>
+		<filename>index.html</filename>
+		<filename>index.php</filename>
+		<filename>params.ini</filename>
+		<filename>templateDetails.xml</filename>
+		<filename>template_thumbnail.png</filename>
+	</files>
+
+    <languages>
+    	<language tag="en-GB">en-GB.tpl_68portal.ini</language>
+    </languages>
+
+	<administration>
+		<languages folder="admin">
+			<language tag="en-GB">en-GB.tpl_68portal.ini</language>
+		</languages>
+    </administration>
+
+	<positions>
+		<position>left</position>
+		<position>right</position>
+		<position>top</position>
+		<position>breadcrumb</position>
+		<position>user1</position>
+		<position>user2</position>
+		<position>user3</position>
+		<position>user4</position>
+		<position>debug</position>
+	</positions>
+
+	<params>
+   		<param type="spacer" default="&lt;h2&gt;Width of the Template&lt;/h2&gt;" />
+        <param name="width" type="list" default="max" label="Template Width" description="Width style of the template">
+				<option value="max">Flexible with max-width</option>
+				<option value="min">Small</option>
+		</param>
+
+		<param type="spacer" default="&lt;h2&gt;Top Module Position&lt;/h2&gt;" />
+        <param name="topmodule" type="list" default="module" label="Top Module Position" description="Choose between the Top Module Position or a Welcome Text">
+				<option value="module">Module</option>
+				<option value="welcome">Welcome Text</option>
+		</param>
+		<param name="welcomehead" type="text" default="" label="Welcome Heading" description="If you've choosed the Welcome Text type the Heading here" />
+        <param name="welcometext" type="textarea" default="" label="Welcome Text" description="If you've choosed the Welcome Text type it in here" />
+
+		<param type="spacer" default="&lt;h2&gt;Site Slogan&lt;/h2&gt;" />
+		<param name="slogan" type="text" default="" label="Site Slogan" description="Site Slogan over the Header-Image" />
+
+        <param type="spacer" default="&lt;h2&gt;Footer&lt;/h2&gt;" />
+		<param name="poweredby" type="list" default="show" label="Powered by Joomla" description="Show or Hide the Powered by Joomla Logo in the Footer">
+				<option value="show">Show</option>
+				<option value="hide">Hide</option>
+		</param>
+        <param name="copyright" type="text" default="" label="Copyright Text" description="Copyright Text in the Footer" />
+	</params>
+
+</install>
