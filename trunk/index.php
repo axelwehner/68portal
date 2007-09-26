@@ -1,10 +1,10 @@
 <?php
 /**
-* @version		$Rev:$
-* @package		Joomla
-* @subpackage	68portal
-* @copyright	Copyright (c)2007 Axel Wehner. All rights reserved.
-* @license		GNU/GPL
+* @version      $Id$
+* @package      Joomla
+* @subpackage   68portal
+* @copyright    Copyright (c)2007 Axel Wehner. All rights reserved.
+* @license      GNU/GPL
 **/
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
