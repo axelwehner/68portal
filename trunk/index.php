@@ -1,7 +1,8 @@
 <?php
 
 /**
-* @version      $Rev$
+* @version
+$Rev$
 * @package      Joomla
 * @subpackage   68portal
 * @copyright    Copyright (c)2007 Axel Wehner. All rights reserved.
@@ -51,6 +52,29 @@ endif;
   <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/template_css.css" type="text/css" />
   <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/navigation.css" type="text/css" />
   <!--[if IE]><link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/iefixes.css" type="text/css" /><![endif]-->
+  <script type="text/javascript">
+  window.addEvent('domready', function() {
+      var list = $$('#page-l');
+		list.each(function(element) {
+
+			var fx = new Fx.Styles(element, {duration:200, wait:false});
+
+            $('big').addEvent('click', function(){
+				fx.start({
+					'width': [950, 1000]
+				});
+			});
+
+            $('small').addEvent('click', function(){
+				fx.start({
+					'width': [1000, 850]
+				});
+			});
+
+		});
+  });
+  </script>
+
 </head>
 
 <body class="<?php echo $layout; ?> width_<?php echo $this->params->get('width'); ?>">
@@ -66,6 +90,7 @@ endif;
 			<h1><a href="index.php"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/images/logo.gif" alt="<?php echo $sitetitle; ?>" title="<?php echo $sitetitle; ?>" /></a></h1>
 			<jdoc:include type="modules" name="user3" />
 			<jdoc:include type="modules" name="user4" />
+			<ul id="size"><li id="big">big</li><li id="small">small</li></ul>
 		</div>
 		<!-- //top header -->
 
