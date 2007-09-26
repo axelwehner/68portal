@@ -1,5 +1,15 @@
-<?php // no direct access
-defined('_JEXEC') or die('Restricted access'); ?>
+<?php
+
+/**
+* @version      $Id$
+* @package      Joomla!
+* @subpackage   68portal
+* @license      GNU/GPL
+**/
+
+defined( '_JEXEC' ) or die('Restricted access');
+?>
+
 <?php if ($params->get('item_title')) : ?>
 <div class="newsflash<?php echo $params->get( 'moduleclass_sfx' ); ?>">
 	<h4 class="contentheading<?php echo $params->get( 'moduleclass_sfx' ); ?>">

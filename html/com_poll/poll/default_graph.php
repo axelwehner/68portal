@@ -1,5 +1,14 @@
-<?php // no direct access
-defined('_JEXEC') or die('Restricted access'); ?>
+<?php
+
+/**
+* @version      $Id$
+* @package      Joomla!
+* @subpackage   68portal
+* @license      GNU/GPL
+**/
+
+defined( '_JEXEC' ) or die('Restricted access');
+?>
 
 <h3>
 	<img src="components/com_poll/assets/poll.png" border="0" width="12" height="14" alt="" />

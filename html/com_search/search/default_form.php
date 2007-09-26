@@ -1,5 +1,14 @@
-<?php defined('_JEXEC') or die('Restricted access'); ?>
+<?php
 
+/**
+* @version      $Id$
+* @package      Joomla!
+* @subpackage   68portal
+* @license      GNU/GPL
+**/
+
+defined( '_JEXEC' ) or die('Restricted access');
+?>
 <form id="searchForm" action="<?php echo JRoute::_( 'index.php?option=com_search' );?>" method="post" name="searchForm">
 
 	<div class="search_word">

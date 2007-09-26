@@ -1,5 +1,12 @@
 <?php
 
+/**
+* @version      $Id$
+* @package      Joomla!
+* @subpackage   68portal
+* @license      GNU/GPL
+**/
+
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 

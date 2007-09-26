@@ -1,4 +1,15 @@
-<?php defined('_JEXEC') or die('Restricted access'); ?>
+<?php
+
+/**
+* @version      $Id$
+* @package      Joomla!
+* @subpackage   68portal
+* @license      GNU/GPL
+**/
+
+defined( '_JEXEC' ) or die('Restricted access');
+?>
+
 <div class="weblinks<?php echo $this->params->get( 'pageclass_sfx' ); ?> weblink_cat<?php echo $this->category->id; ?>">
 
 	<?php if ( $this->params->def( 'show_page_title', 1 ) ) : ?>

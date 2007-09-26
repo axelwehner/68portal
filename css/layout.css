@@ -44,7 +44,7 @@ text-align: center; background: #8A950B url(../images/body.png) 0 0 repeat; }
 /* page / shadow
 ****************************/
 div#page-l
-{ min-width: 760px; padding: 0 0 0 3px; margin: 0 auto; text-align: left; font-size: 0.8em; 
+{ max-width: 95%; min-width: 760px; padding: 0 0 0 3px; margin: 0 auto; text-align: left; font-size: 0.8em; 
 line-height: 150%; background: #8A950B url(../images/shadow-left.png) left top repeat-y; }
 
 	div#page-r
@@ -77,33 +77,26 @@ line-height: 150%; background: #8A950B url(../images/shadow-left.png) left top r
 		div#header
 		{ height: 166px; font-size: 0.85em; line-height: 155%; border-bottom: 1px solid #fff; position: relative; }
 
-
-			/***************************************************************
-							TODO - ie6
-			***************************************************************/
 			div#header div#topmod
 			{ height: 166px; width: 240px; /*float: left;*/ position: absolute; top: 0; left: 0; background: #D2DEF0 url(../images/topmod.png) 0 0 no-repeat; overflow: auto; }
 
 				div#header div#topmod .article_separator
 				{ display: none; }
 
-			/* module layout -> template_css.css */
+				/* module layout -> template_css.css */
 
 			div#header div#image
-			{ position: relative; left: 241px; margin: 0 241px 0 0; height: 166px; background: url(../images/header-image.png) left 0 no-repeat; }
+			{ position: relative; left: 241px; margin: 0 241px 0 0; height: 166px; background: url(../images/header-image.png) left 0 repeat-x; }
 			
-			div#header div#image h2#slogan
-			{ position: absolute; right: 10px; bottom: 5px; margin: 0; color: #fff; font-size: 1.3em; letter-spacing: 0.05em; font-family: Trebuchet MS, Verdana, Geneva, Arial, Helvetica, sans-serif }
-			
-			/***************************************************************
-							TODO - ie6
-			***************************************************************/
+				div#header div#image h2#slogan
+				{ position: absolute; right: 10px; bottom: 5px; margin: 0; color: #fff; font-size: 1.3em; letter-spacing: 0.05em; font-family: Trebuchet MS, Verdana, Geneva, Arial, Helvetica, sans-serif }
 
 
 		/* main section / content
 		****************************/
 		div#content
-		{ padding: 0 0 3px 0; background: url(../images/left-column.png) left top repeat-y; }
+		{ padding: 0 0 3px 0; /* padding for the #page-r background */
+		background: url(../images/left-column.png) left top repeat-y; }
 
 		body.right-col div#content,
 		body.no-col div#content
@@ -197,7 +190,7 @@ line-height: 150%; background: #8A950B url(../images/shadow-left.png) left top r
 
 					div#content div#footer p
 					{ margin: 0; float: right; }
-					
+
 					div#content div#footer p.copyright
 					{ float: left; margin: 0;  }
 

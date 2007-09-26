@@ -1,5 +1,13 @@
-<?php // no direct access
-defined('_JEXEC') or die('Restricted access'); 
+<?php
+
+/**
+* @version      $Id$
+* @package      Joomla!
+* @subpackage   68portal
+* @license      GNU/GPL
+**/
+
+defined( '_JEXEC' ) or die('Restricted access');
 ?>
 
 <?php JHTML::_('stylesheet', 'poll_bars.css', 'components/com_poll/assets/'); ?>
