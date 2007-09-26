@@ -1,4 +1,12 @@
 <?php
+/**
+* @version		$Id$
+* @package		Joomla
+* @subpackage	68portal
+* @copyright	Copyright (c)2007 Axel Wehner. All rights reserved.
+* @license		GNU/GPL, see LICENSE.php
+**/
+
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
 // sitetitle
