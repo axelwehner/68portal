@@ -1,4 +1,15 @@
-<?php /** $Id$ */ defined( '_JEXEC' ) or die(); ?>
+<?php
+
+/**
+* @version      $Id$
+* @package      Joomla!
+* @subpackage   68portal
+* @license      GNU/GPL
+**/
+
+defined( '_JEXEC' ) or die('Restricted access');
+?>
+
 <script type="text/javascript">
 <!--
 	function validateForm( frm ) {

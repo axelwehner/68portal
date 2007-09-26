@@ -1,5 +1,15 @@
-<?php // no direct access
-defined('_JEXEC') or die('Restricted access'); ?>
+<?php
+
+/**
+* @version      $Id$
+* @package      Joomla!
+* @subpackage   68portal
+* @license      GNU/GPL
+**/
+
+defined( '_JEXEC' ) or die('Restricted access');
+?>
+
 <div class="bannergroup<?php echo $params->get( 'moduleclass_sfx' ) ?>">
 
 <?php if ($headerText) : ?>

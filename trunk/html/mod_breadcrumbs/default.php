@@ -1,5 +1,15 @@
 <?php // no direct access
-defined('_JEXEC') or die('Restricted access'); ?>
+
+/**
+* @version      $Id$
+* @package      Joomla!
+* @subpackage   68portal
+* @license      GNU/GPL
+**/
+
+defined('_JEXEC') or die('Restricted access');
+?>
+
 <ul class="breadcrumbs pathway">
 <?php for ($i = 0; $i < $count; $i ++) :
 

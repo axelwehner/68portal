@@ -1,4 +1,15 @@
-<?php defined('_JEXEC') or die('Restricted access'); ?>
+<?php
+
+/**
+* @version      $Id$
+* @package      Joomla!
+* @subpackage   68portal
+* @license      GNU/GPL
+**/
+
+defined( '_JEXEC' ) or die('Restricted access');
+?>
+
 <h3><?php echo JText::_( 'Read more...' ); ?></h3>
 <ul>
 <?php

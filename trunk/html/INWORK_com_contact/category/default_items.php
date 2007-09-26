@@ -1,4 +1,15 @@
-<?php defined( '_JEXEC' ) or die(); ?>
+<?php
+
+/**
+* @version      $Id$
+* @package      Joomla!
+* @subpackage   68portal
+* @license      GNU/GPL
+**/
+
+defined( '_JEXEC' ) or die('Restricted access');
+
+?>
 <?php foreach($this->items as $item) : ?>
 <tr class="sectiontableentry<?php echo $item->odd; ?>">
 	<th class="number" align="right" width="5">

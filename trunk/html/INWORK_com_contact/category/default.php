@@ -1,4 +1,15 @@
-<?php defined( '_JEXEC' ) or die(); ?>
+<?php
+
+/**
+* @version      $Id$
+* @package      Joomla!
+* @subpackage   68portal
+* @license      GNU/GPL
+**/
+
+defined( '_JEXEC' ) or die('Restricted access');
+
+?>
 <div class="contact_categories contact<?php echo $this->params->get( 'pageclass_sfx' ); ?>">
 
 <?php if ( $this->params->get( 'show_page_title' ) ) : ?>
