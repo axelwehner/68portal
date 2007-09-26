@@ -44,11 +44,8 @@ text-align: center; background: #8A950B url(../images/body.png) 0 0 repeat; }
 /* page / shadow
 ****************************/
 div#page-l
-{ max-width: 75em; min-width: 760px; padding: 0 0 0 3px; margin: 0 auto; text-align: left; font-size: 0.8em; 
+{ min-width: 760px; padding: 0 0 0 3px; margin: 0 auto; text-align: left; font-size: 0.8em; 
 line-height: 150%; background: #8A950B url(../images/shadow-left.png) left top repeat-y; }
-
-body.width_min div#page-l
-{ width: 800px; }
 
 	div#page-r
 	{ padding: 0 3px 0 0; background: #fff url(../images/shadow-right.png) right top repeat-y; }
