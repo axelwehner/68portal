@@ -80,7 +80,7 @@ endif;
 				<?php if ($this->params->get('topmodule') == 'welcome') : ?>
 				<div class="moduletable">
 					<?php if ($this->params->get('welcomehead') != '') : ?>
-	                <h3 class="welcome_heading">
+					<h3 class="welcome_heading">
 						<?php echo $this->params->get('welcomehead'); ?>
 					</h3>
 					<?php endif;
@@ -95,7 +95,7 @@ endif;
 			</div>
 
 			<div id="image">
-                <?php if ($this->params->get('slogan') != '') : ?>
+			<?php if ($this->params->get('slogan') != '') : ?>
 				<h2 id="slogan">
 					<?php echo $this->params->get('slogan'); ?>
 				</h2>
@@ -119,7 +119,7 @@ endif;
 			<!-- main -->
 			<div id="main">
 
-                <!-- breadcrumbs -->
+				<!-- breadcrumbs -->
 				<div id="breadcrumb" <?php echo $browser; ?>>
 					<h3 class="here"><?php echo JText::_('You are here'); ?></h3>
 					<jdoc:include type="module" name="breadcrumbs" />
@@ -134,14 +134,14 @@ endif;
 					<div class="content-modules">
 
 						<?php if($this->countModules('user1')) : ?>
-                        <div class="<?php echo $module1; ?>">
+						<div class="<?php echo $module1; ?>">
 							<jdoc:include type="modules" name="user1" style="68portal" />
 						</div>
 						<?php endif; ?>
 
 						<?php if($this->countModules('user2')) : ?>
-                        <div class="<?php echo $module2; ?>">
-                        	<jdoc:include type="modules" name="user2" style="68portal" />
+						<div class="<?php echo $module2; ?>">
+							<jdoc:include type="modules" name="user2" style="68portal" />
 						</div>
 						<?php endif; ?>
 
@@ -160,7 +160,7 @@ endif;
 				<?php if($this->countModules('right')) : ?>
 				<!-- right sidebar -->
 				<div id="right-sidebar">
-                    <jdoc:include type="modules" name="right" style="68portal" />
+					<jdoc:include type="modules" name="right" style="68portal" />
 				</div>
 				<!-- //right sidebar -->
 				<?php endif; ?>
@@ -182,7 +182,7 @@ endif;
 				<p class="joomla">
 					<?php echo JText::_('Powered by');?> <a href="http://www.joomla.org"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/images/joomla.gif" alt="Joomla! CMS" /></a>
 				</p>
-            	<?php endif; ?>
+				<?php endif; ?>
 			</div>
 			<!-- //footer -->
 			<?php endif; ?>
