@@ -1,0 +1,33 @@
+/******
+* @author axel wehner | www.68media.de | aw@68media.de
+* @copyright (c) 2007 by axel wehner
+* @last change 03.09.2007
+******/
+
+/* clearing (using hasLayout) */
+#content, #main, #header, #main-content, .content-modules, #right-sidebar, .module, .blog_row, .leading, .filter, .contentdescription, #breadcrumb, #footer,
+div.module, div.module-alt1, div.module-alt2, div.module_text, div.module div, div.module-alt1 div, div.module-alt2 div, div.module_text div 
+{ zoom:1; }
+
+#ie_clearing
+{ display:block; \clear:both; width: 100%; font-size:0; margin: -2px 0 -1em 0px; background: transparent; }
+
+* html div#content div#breadcrumb {
+position: relative; margin: 0 -10px 10px -12px; 
+} 
+
+* html body.no-col div#content div#breadcrumb,
+* html body.right-col div#content div#breadcrumb
+{ margin: 0 -10px 10px -12px; }
+
+* html #page-l
+{ width: 75em; }
+
+* html div#top-header ul
+{ bottom: 14px; }
+
+* html table.items
+{ width: 99%; }
+
+* html div#content div#footer
+{ padding-bottom: 0.5em;}
