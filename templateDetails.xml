@@ -48,9 +48,11 @@
 
 	<params>
    		<param type="spacer" default="&lt;h2&gt;Width of the Template&lt;/h2&gt;" />
-        <param name="width" type="list" default="max" label="Template Width" description="Width style of the template">
-				<option value="max">Flexible with max-width</option>
-				<option value="min">Small</option>
+		<param name="width" type="text" default="75" label="Template Width" description="Template Width" />
+        <param name="unit" type="list" default="em" label="Width Unit" description="Unit of the width">
+				<option value="em">em</option>
+				<option value="px">px</option>
+				<option value="%">%</option>
 		</param>
 
 		<param type="spacer" default="&lt;h2&gt;Top Module Position&lt;/h2&gt;" />

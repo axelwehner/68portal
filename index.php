@@ -8,37 +8,11 @@
 * @license      GNU/GPL
 **/
 
+// no direct access
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-// sitetitle
-$sitetitle = $mainframe->getCfg('sitename');
-
-// layout settings
-if ($this->countModules('left and right')) :
-	$layout = 'left-n-right-col';
-elseif ($this->countModules('left')) :
-	$layout = 'left-col';
-elseif ($this->countModules('right')) :
-	$layout = 'right-col';
-else :
-	$layout = 'no-col';
-endif;
-
-// opera css class
-if (stristr($_SERVER['HTTP_USER_AGENT'],'opera')) :
-	$browser = 'class="opera"';
-else :
-	$browser = '';
-endif;
-
-// content module settings
-if ($this->countModules('user1 and user2')) :
-	$module1 = 'float1';
-	$module2 = 'float2';
-elseif ($this->countModules('user1 or user2')) :
-	$module1 = '';
-	$module2 = '';
-endif;
+// include the (user)settings
+include_once (dirname(__FILE__).DS.'/settings.php');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -46,14 +20,15 @@ endif;
 <head>
 <jdoc:include type="head" />
   <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/system.css" type="text/css" />
-  <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/general.css" type="text/css" />
+  <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/general.css" type="text/css" />
   <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/layout.css" type="text/css" />
   <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/template_css.css" type="text/css" />
   <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/navigation.css" type="text/css" />
   <!--[if IE]><link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/iefixes.css" type="text/css" /><![endif]-->
+  <style type="text/css">div#page-l { width: <?php echo $width.$unit; ?> } /* user settings */</style>
 </head>
 
-<body class="<?php echo $layout; ?> width_<?php echo $this->params->get('width'); ?>">
+<body class="<?php echo $layout; ?>">
 
 <!-- shadow left -->
 <div id="page-l">

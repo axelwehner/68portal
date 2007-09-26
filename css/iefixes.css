@@ -22,8 +22,10 @@ position: relative; margin: 0 -10px 10px -12px;
 * html body.right-col div#content div#breadcrumb
 { margin: 0 -10px 10px -12px; }
 
+/*
 * html #page-l
 { width: 75em; }
+*/
 
 * html div#top-header ul
 { bottom: 14px; }
