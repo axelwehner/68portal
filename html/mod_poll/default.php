@@ -1,4 +1,12 @@
 <?php // no direct access
+
+/**
+* @version      $Id$
+* @package      Joomla!
+* @subpackage   68portal
+* @license      GNU/GPL
+**/
+
 defined('_JEXEC') or die('Restricted access'); ?>
 <form class="poll poll<?php echo $params->get('moduleclass_sfx'); ?>" action="index.php" method="post" name="form2">
 	<h5><?php echo $poll->title;?></h5>
