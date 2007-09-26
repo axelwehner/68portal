@@ -1,6 +1,6 @@
 <?php
 /**
-* @version      $Id$
+* @version      $Rev$
 * @package      Joomla
 * @subpackage   68portal
 * @copyright    Copyright (c)2007 Axel Wehner. All rights reserved.
