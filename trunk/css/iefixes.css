@@ -35,3 +35,7 @@ position: relative; margin: 0 -10px 10px -12px;
 
 * html div#content div#footer
 { padding-bottom: 0.5em;}
+
+* html .tool-tip
+{ width: 200px; }
+
