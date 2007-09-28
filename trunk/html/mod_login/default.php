@@ -47,12 +47,12 @@ defined( '_JEXEC' ) or die('Restricted access');
 	<input type="submit" name="Submit" class="button" value="<?php echo JText::_('LOGIN') ?>" />
 	</fieldset>
 	<ul>
-		<li>
+		<li class="password">
 			<a href="<?php echo JRoute::_( 'index.php?option=com_user&view=reset' ); ?>">
 			<?php echo JText::_('FORGOT_YOUR_PASSWORD'); ?>
 			</a>
 		</li>
-		<li>
+		<li class="username">
 			<a href="<?php echo JRoute::_( 'index.php?option=com_user&view=remind' ); ?>">
 			<?php echo JText::_('FORGOT_YOUR_USERNAME'); ?>
 			</a>
@@ -60,7 +60,7 @@ defined( '_JEXEC' ) or die('Restricted access');
 		<?php
 		$usersConfig = &JComponentHelper::getParams( 'com_users' );
 		if ($usersConfig->get('allowUserRegistration')) : ?>
-		<li>
+		<li class="register">
 			<a href="<?php echo JRoute::_( 'index.php?option=com_user&task=register' ); ?>">
 				<?php echo JText::_('REGISTER'); ?>
 			</a>
