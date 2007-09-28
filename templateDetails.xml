@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <install version="1.5" type="template">
 	<name>68portal</name>
-	<version>1.3</version>
-	<creationDate>25 September 2007</creationDate>
+	<version>1.4</version>
+	<creationDate>28 September 2007</creationDate>
 	<author>Axel Wehner</author>
 	<authorEmail>aw@68media.de</authorEmail>
 	<authorUrl>http://www.68media.de</authorUrl>
@@ -47,12 +47,18 @@
 	</positions>
 
 	<params>
-   		<param type="spacer" default="&lt;h2&gt;Width of the Template&lt;/h2&gt;" />
+        <param type="spacer" default="&lt;h2&gt;Width of the Template&lt;/h2&gt;" />
 		<param name="width" type="text" default="75" label="Template Width" description="Template Width" />
         <param name="unit" type="list" default="em" label="Width Unit" description="Unit of the width">
 				<option value="em">em</option>
-				<option value="px">px</option>
 				<option value="%">%</option>
+				<option value="px">px</option>
+		</param>
+
+        <param type="spacer" default="&lt;h2&gt;Modules&lt;/h2&gt;" />
+        <param name="modulestyle" type="list" default="standard" label="Modulestyle" description="Modulestyle">
+				<option value="standard">standard</option>
+				<option value="modern">modern</option>
 		</param>
 
 		<param type="spacer" default="&lt;h2&gt;Top Module Position&lt;/h2&gt;" />

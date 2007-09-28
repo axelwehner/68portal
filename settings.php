@@ -14,6 +14,7 @@ defined( '_JEXEC' ) or die( 'Restricted access' );
 /* sitetitle
 ******************************************************************/
 $sitetitle = $mainframe->getCfg('sitename');
+$menu = & JSite::getMenu();
 
 /* layout settings
 ******************************************************************/
@@ -27,6 +28,11 @@ else :
 	$layout = 'no-col';
 endif;
 
+if ($this->params->get('modulestyle') == 'modern') :
+	$layout .= ' modern';
+endif;
+
+
 /* content module settings
 ******************************************************************/
 if ($this->countModules('user1 and user2')) :
@@ -37,6 +43,7 @@ elseif ($this->countModules('user1 or user2')) :
 	$module2 = '';
 endif;
 
+
 /* opera css class (for breadcrumb correction)
 ******************************************************************/
 if (stristr($_SERVER['HTTP_USER_AGENT'],'opera')) :
@@ -45,14 +52,16 @@ else :
 	$browser = '';
 endif;
 
+
 /* user width
 ******************************************************************/
-if ($this->params->get('width') == '') :
+if ($this->params->get('width') == '' || !is_numeric($this->params->get('width'))) :
 	$width = '75';
+	$unit = 'em';
 else :
 	$width = $this->params->get('width');
+	$unit =  $this->params->get('unit');
 endif;
 
-$unit = $this->params->get('unit');
 
 ?>

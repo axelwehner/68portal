@@ -38,7 +38,14 @@ include_once (dirname(__FILE__).DS.'/settings.php');
 
 		<!-- top header -->
 		<div id="top-header">
-			<h1><a href="index.php"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/images/logo.gif" alt="<?php echo $sitetitle; ?>" title="<?php echo $sitetitle; ?>" /></a></h1>
+			<h1>
+                <?php if ($menu->getActive() == $menu->getDefault()) : ?>
+				<img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/images/logo.gif" alt="<?php echo $sitetitle; ?>" title="<?php echo $sitetitle; ?>" />
+            	<?php else : ?>
+				<a href="<?php echo $this->baseurl ?>"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/images/logo.gif" alt="<?php echo $sitetitle; ?>" title="<?php echo $sitetitle; ?>" /></a>
+            	<?php endif; ?>
+			</h1>
+
 			<jdoc:include type="modules" name="user3" />
 			<jdoc:include type="modules" name="user4" />
 		</div>

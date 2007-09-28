@@ -29,7 +29,7 @@ text-align: center; background: #8A950B url(../images/body.png) 0 0 repeat; }
 ****************************/
 /* you can find the ie clearing in the iefixes.css */
 .clearfix:after, #header:after, #content:after, div.content-modules:after, div.blog_row:after, ul.meta:after, .filter:after,
-.contentdescription:after, #footer:after, #main:after
+.contentdescription:after, #footer:after, #main:after, .pagination:after
 { content: "."; display: block; height: 0; line-height: 0; clear: both; visibility: hidden; }
 
 #ie_clearing { display: none }
