@@ -470,3 +470,17 @@ ul.pagination
 		
 		ul.pagination li.aktiv span strong
 		{ color: #000; }
+
+/* Tooltips
+****************************/
+.tool-tip
+{ float: left; background: #ffc; border: 1px solid #D4D5AA;	padding: 5px; max-width: 200px; font-size: 0.7em; text-align: left;}
+
+.tool-title
+{ padding: 15px 0 5px 0; margin: -15px 0 0 0; font-weight: bold; background: url(../../system/images/selector-arrow.png) no-repeat;}
+
+.tool-text
+{ font-size: 100%; margin: 0; }
+
+.contentpaneopen_edit
+{ margin: 10px 5px 0 0; }
