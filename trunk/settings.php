@@ -28,6 +28,7 @@ else :
 	$layout = 'no-col';
 endif;
 
+
 if ($this->params->get('modulestyle') == 'modern') :
 	$layout .= ' modern';
 endif;
@@ -62,6 +63,5 @@ else :
 	$width = $this->params->get('width');
 	$unit =  $this->params->get('unit');
 endif;
-
 
 ?>
