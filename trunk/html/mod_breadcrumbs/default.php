@@ -15,7 +15,7 @@ defined('_JEXEC') or die('Restricted access');
 
 	// If not the last item in the breadcrumbs add the separator
 	if ($i < $count -1) : ?>
-	<li><?php echo $list[$i]->link; ?></li>
+	<li><?php echo '<a href="'.$list[$i]->link.'">'.$list[$i]->name.'</a>'; ?></li>
 	<?php else : ?>
 	<li><?php echo $list[$i]->name; ?></li>
 

@@ -12,7 +12,7 @@ defined( '_JEXEC' ) or die('Restricted access');
 
 <?php if ($this->params->get('show_page_title')) : ?>
 <h1 class="componentheading<?php echo $this->params->get( 'pageclass_sfx' ); ?>">
-	<?php echo $this->section->title; ?>
+    <?php echo $this->escape($this->section->title); ?>
 </h1>
 <?php endif; ?>
 <div class="categorylist<?php echo $this->params->get( 'pageclass_sfx' ); ?>">

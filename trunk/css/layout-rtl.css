@@ -1,0 +1,204 @@
+/**
+* @version      $Id$
+* @package      Joomla!
+* @subpackage   68portal
+* @copyright    Copyright (c)2007 Axel Wehner. All rights reserved.
+* @license      GNU/GPL
+**/
+
+/*********************************************************************************************************
+	layout
+*********************************************************************************************************/
+
+/* page / shadow
+****************************/
+div#page-l
+{ text-align: right; direction: rtl; }
+
+		/* top header
+		****************************/
+		div#top-header h1
+		{ position:absolute; top: 0; right: 0; }
+
+		div#top-header form
+		{ top: 10px; left: 10px; }
+
+			div#top-header form .search
+			{ position: absolute; top: 0; left: 10px; }
+
+
+		/* header
+		****************************/
+		div#header div#topmod
+		{ top: 0; right: 0; left: auto; }
+
+		div#header div#image
+		{ left: auto; right: 241px; margin: 0 0 0 241px; }
+
+			div#header div#image h2#slogan
+			{ left: 10px; right: auto; }
+
+
+		/* main section / content
+		****************************/
+		div#content
+		{ background: url(../images/left-column.png) right top repeat-y; }
+
+
+			/* left sidebar
+			****************************/
+			div#content div#left-sidebar
+			{ float: right; }
+
+
+			/* breadcrumb / pathway
+			****************************/
+			div#content div#breadcrumb
+			{ margin: 0 -9px 10px -10px;  }
+
+				/* breadcrumb heading */
+				div#content div#breadcrumb h3
+				{ float: right; }
+
+				div#content div#breadcrumb ul li
+				{ float: right; }
+
+					/* breadcrumb links */
+					div#content div#breadcrumb ul li a:link, div#content div#breadcrumb ul li a:visited
+					{ background: url(../images/breadcrumb_rtl.gif) 0% 60% no-repeat; padding: 0 0 0 10px; }
+
+
+			/* main content
+			****************************/
+			div#content div#main
+			{ margin: 0 250px 0 10px; }
+
+			/* variable module layouts */
+			body.right-col div#content div#main,
+			body.no-col div#content div#main
+			{ margin: 0 10px 0 10px; }
+
+				div#content div#main div#main-content
+				{ float: right; width: 68.7%; }
+
+					div#content div#main div#main-content div.content-modules div.float1
+					{ float: right; }
+
+					div#content div#main div#main-content div.content-modules div.float2
+					{ float: left; }
+
+
+					/* right sidebar
+					****************************/
+					div#content div#main div#right-sidebar
+					{ margin: 0 70% 0 0; }
+
+
+				/* footer
+				****************************/
+				div#content div#footer
+				{ margin: 1em 241px 0 0; }
+
+					div#content div#footer p
+					{ margin: 0; float: right; }
+
+					div#content div#footer p.copyright
+					{ float: left; margin: 0;  }
+		
+		
+/*********************************************************************************************************
+	navigation.css
+*********************************************************************************************************/
+	
+/* top navigation
+***************************/
+div#top-header ul
+{ left: 10px; }
+
+/* left navigation
+***************************/
+/* first level */
+div#left-sidebar ul.menu li a:link, div#left-sidebar ul.menu li a:visited
+{ padding: 0.3em 1.2em; }
+
+		div#left-sidebar ul.menu li a:active, div#left-sidebar ul.menu li a:focus,
+		div#left-sidebar ul.menu li.active a:link, div#left-sidebar ul.menu li.active a:visited
+		{ background: #ECF0E5 url(../images/menu_left_active.gif) right center no-repeat; }
+
+/* second level */
+div#left-sidebar ul.menu li li
+{ padding: 0 15px 0 0; }
+
+	div#left-sidebar ul.menu li.active li a:link, div#left-sidebar ul.menu li.active li a:visited
+	{ background: #ECF0E5 url(../images/menu_sub_left.gif) 100% 55% no-repeat; color: #006633; padding: 0.2em 10px 0.2em 0.5em; }
+
+/* third level */
+div#left-sidebar ul.menu li.active li.active li a:link, div#left-sidebar ul.menu li.active li.active li a:visited
+{ padding: 0.1em 10px 0.1em 0.5em; }
+
+
+/*********************************************************************************************************
+	template.css
+*********************************************************************************************************/
+/* links */
+a.readon:link, a.readon:visited
+{text-align: left; background: #fff url(../images/readon-rtl.gif) 0% 55% no-repeat; padding: 0 0 0 20px;}
+
+/* lists */
+ul, ol, dl
+{ margin: 0 1.5em 1em 0; }
+
+li
+{ margin: 0 0.5em 0.3em 0; list-style-position: outside; }
+
+dd /* definition description */
+{ margin: 0 1.8em 0 0; }
+
+#form-login ul
+{ font-size: 0.85em; margin: 0.5em 1.5em 0.5em 0; }
+
+/* icons */
+.accept, .arrow, .download, .flag, .info, .link, .note, .question, .stop, .warning
+{ padding: 0.2em 30px 0.2em 0.2em; background-position: right center; }
+
+.arrow { background-image: url(../images/readon-rtl.gif); }
+
+/* top module */
+div#header div#topmod div.moduletable
+{ margin: 5px 15px; }
+
+/* left module headings */
+div#content div#left-sidebar div.moduletable h3,div#content div#left-sidebar div.moduletable-alt1 h3,div#content div#left-sidebar div.moduletable-alt2 h3,div#content div#left-sidebar div.moduletable_menu h3
+{ padding: 0.7em 15px 0.2em 0; }
+
+/* articles */
+ul.buttonheading { float: left; }
+ul.meta { clear: both; } /* clearing only for rtl */
+ul.meta li { padding: 0 20px 0 0; margin: 0 0 0.2em 0.5em; background: transparent url(../images/meta.gif) right center no-repeat; }
+
+	/* 2 cols */
+	.cols2 .col0,
+	.cols2 .col1 { float: right; }
+	.cols2 .col1 { float: left; }
+
+	/* 3 cols */
+	.cols3 .col0,
+	.cols3 .col1,
+	.cols3 .col2 { float: right; width: 32%; }
+	.cols3 .col0 { margin: 0 0 0 2%;}
+	.cols3 .col2 { float: left; margin: 0; }
+
+/* catlist */
+ul.categories li h3 small
+	{ color: #000; text-transform: none; float: right; }
+	
+	ul.categories li h3
+	{ overflow: hidden; }
+
+	
+form.poll ol li input { float: right; }
+
+/* table */
+table.items th, table.items td, td.sectiontableentry0, td.sectiontableentry1
+{text-align: right; }
+
