@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <install version="1.5" type="template">
 	<name>68portal</name>
-	<version>1.4</version>
+	<version>1.5</version>
 	<creationDate>28 September 2007</creationDate>
 	<author>Axel Wehner</author>
 	<authorEmail>aw@68media.de</authorEmail>
