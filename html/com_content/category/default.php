@@ -11,9 +11,9 @@ defined( '_JEXEC' ) or die('Restricted access');
 ?>
 
 <?php if ($this->params->get('show_page_title')) : ?>
-	<div class="componentheading<?php echo $this->params->get( 'pageclass_sfx' ); ?>">
-		<?php echo $this->category->title; ?>
-	</div>
+	<h1 class="componentheading<?php echo $this->params->get( 'pageclass_sfx' ); ?>">
+        <?php echo $this->escape($this->category->title); ?>
+	</h1>
 <?php endif; ?>
 <div class="category<?php echo $this->params->get( 'pageclass_sfx' ); ?> category<?php echo $this->category->id;?>">
 	<div class="contentdescription<?php echo $this->params->get( 'pageclass_sfx' ); ?>">

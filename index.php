@@ -12,11 +12,11 @@
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
 // include the (user)settings
-include_once (dirname(__FILE__).DS.'/settings.php');
+include_once (dirname(__FILE__).DS.'settings.php');
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" >
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
 <jdoc:include type="head" />
   <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/system.css" type="text/css" />
@@ -24,6 +24,9 @@ include_once (dirname(__FILE__).DS.'/settings.php');
   <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/layout.css" type="text/css" />
   <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/template.css" type="text/css" />
   <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/navigation.css" type="text/css" />
+  <?php if($this->direction == 'rtl') : ?>
+  <link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/layout-rtl.css" type="text/css" />
+  <?php endif; ?>
   <!--[if IE]><link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/css/iefixes.css" type="text/css" /><![endif]-->
   <style type="text/css">div#page-l { width: <?php echo $width.$unit; ?> } /* user settings */</style>
 </head>
@@ -33,150 +36,154 @@ include_once (dirname(__FILE__).DS.'/settings.php');
 <!-- shadow left -->
 <div id="page-l">
 
-	<!-- shadow right -->
-	<div id="page-r">
+    <!-- shadow right -->
+    <div id="page-r">
 
-		<!-- top header -->
-		<div id="top-header">
-			<h1>
+        <!-- top header -->
+        <div id="top-header">
+            <h1>
                 <?php if ($menu->getActive() == $menu->getDefault()) : ?>
-				<img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/images/logo.gif" alt="<?php echo $sitetitle; ?>" title="<?php echo $sitetitle; ?>" />
-            	<?php else : ?>
-				<a href="<?php echo $this->baseurl ?>"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/images/logo.gif" alt="<?php echo $sitetitle; ?>" title="<?php echo $sitetitle; ?>" /></a>
-            	<?php endif; ?>
-			</h1>
+                <img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/images/logo.gif" alt="<?php echo $sitetitle; ?>" title="<?php echo $sitetitle; ?>" />
+                <?php else : ?>
+                <a href="<?php echo $this->baseurl ?>"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/images/logo.gif" alt="<?php echo $sitetitle; ?>" title="<?php echo $sitetitle; ?>" /></a>
+                <?php endif; ?>
+            </h1>
 
-			<jdoc:include type="modules" name="user3" />
-			<jdoc:include type="modules" name="user4" />
-		</div>
-		<!-- //top header -->
+            <jdoc:include type="modules" name="user3" />
+            <jdoc:include type="modules" name="user4" />
+        </div>
+        <!-- //top header -->
 
-		<!-- header -->
-		<div id="header">
+        <!-- header -->
+        <div id="header">
 
-			<div id="topmod" <?php if ($this->params->get('topmodule') == 'welcome') : ?>class="welcome"<?php endif; ?>>
+            <!-- topmodule -->
+            <div id="topmod" <?php if ($this->params->get('topmodule') == 'welcome') : ?>class="welcome"<?php endif; ?>>
 
-				<?php if ($this->params->get('topmodule') == 'module') : ?>
-				<jdoc:include type="modules" name="top" style="68portal_left" />
-				<?php endif; ?>
+                <?php if ($this->params->get('topmodule') == 'module') : ?>
+                <jdoc:include type="modules" name="top" style="68portal_left" />
+                <?php endif; ?>
 
-				<?php if ($this->params->get('topmodule') == 'welcome') : ?>
-				<div class="moduletable">
-					<?php if ($this->params->get('welcomehead') != '') : ?>
-	                <h3 class="welcome_heading">
-						<?php echo $this->params->get('welcomehead'); ?>
-					</h3>
-					<?php endif;
-					if ($this->params->get('welcometext') != '') : ?>
-					<p class="welcome_text">
-						<?php echo $this->params->get('welcometext'); ?>
-					</p>
-					<?php endif; ?>
-				</div>
-				<?php endif; ?>
+                <?php if ($this->params->get('topmodule') == 'welcome') : ?>
+                <div class="moduletable">
+                <?php if ($this->params->get('welcomehead') != '') : ?>
+                    <h3 class="welcome_heading">
+                        <?php echo $this->params->get('welcomehead'); ?>
+                    </h3>
+                    <?php endif;
+                    if ($this->params->get('welcometext') != '') : ?>
+                    <p class="welcome_text">
+                        <?php echo $this->params->get('welcometext'); ?>
+                    </p>
+                    <?php endif; ?>
+                </div>
+                <?php endif; ?>
 
-			</div>
+            </div>
+            <!-- //topmodule -->
 
-			<div id="image">
+            <!-- headerimage -->
+            <div id="image">
                 <?php if ($this->params->get('slogan') != '') : ?>
-				<h2 id="slogan">
-					<?php echo $this->params->get('slogan'); ?>
-				</h2>
-				<?php endif; ?>
-			</div>
+                <h2 id="slogan">
+                    <?php echo $this->params->get('slogan'); ?>
+                </h2>
+                <?php endif; ?>
+            </div>
+            <!-- //headerimage -->
 
-		</div>
-		<!-- //header -->
+        </div>
+        <!-- //header -->
 
-		<!-- content -->
-		<div id="content">
+        <!-- content -->
+        <div id="content">
 
-			<?php if($this->countModules('left')) : ?>
-			<!-- left sidebar -->
-			<div id="left-sidebar">
-				<jdoc:include type="modules" name="left" style="68portal_left" />
-			</div>
-			<!-- //left sidebar -->
-			<?php endif; ?>
+            <?php if($this->countModules('left')) : ?>
+            <!-- left sidebar -->
+            <div id="left-sidebar">
+                <jdoc:include type="modules" name="left" style="68portal_left" />
+            </div>
+            <!-- //left sidebar -->
+            <?php endif; ?>
 
-			<!-- main -->
-			<div id="main">
+            <!-- main -->
+            <div id="main">
 
                 <!-- breadcrumbs -->
-				<div id="breadcrumb" <?php echo $browser; ?>>
-					<h3 class="here"><?php echo JText::_('You are here'); ?></h3>
-					<jdoc:include type="module" name="breadcrumbs" />
-				</div>
-				<!-- //breadcrumbs -->
+                <div id="breadcrumb" <?php echo $browser; ?>>
+                    <h3 class="here"><?php echo JText::_('You are here'); ?></h3>
+                    <jdoc:include type="module" name="breadcrumbs" />
+                </div>
+                <!-- //breadcrumbs -->
 
-				<!-- main content -->
-				<div id="main-content">
+                <!-- main content -->
+                <div id="main-content">
 
-					<?php if($this->countModules('user1 or user2')) : ?>
-					<!-- content modules -->
-					<div class="content-modules">
+                    <?php if($this->countModules('user1 or user2')) : ?>
+                    <!-- content modules -->
+                    <div class="content-modules">
 
-						<?php if($this->countModules('user1')) : ?>
+                        <?php if($this->countModules('user1')) : ?>
                         <div class="<?php echo $module1; ?>">
-							<jdoc:include type="modules" name="user1" style="68portal" />
-						</div>
-						<?php endif; ?>
+                            <jdoc:include type="modules" name="user1" style="68portal" />
+                        </div>
+                        <?php endif; ?>
 
-						<?php if($this->countModules('user2')) : ?>
+                        <?php if($this->countModules('user2')) : ?>
                         <div class="<?php echo $module2; ?>">
-                        	<jdoc:include type="modules" name="user2" style="68portal" />
-						</div>
-						<?php endif; ?>
+                            <jdoc:include type="modules" name="user2" style="68portal" />
+                        </div>
+                        <?php endif; ?>
 
-					</div>
-					<!-- //content modules -->
-					<?php endif; ?>
+                    </div>
+                    <!-- //content modules -->
+                    <?php endif; ?>
 
-					<!-- component -->
-					<jdoc:include type="message" />
-					<jdoc:include type="component" />
+                    <!-- component -->
+                    <jdoc:include type="message" />
+                    <jdoc:include type="component" />
 					<!-- //component -->
 
-				</div>
-				<!-- //main content -->
+                </div>
+                <!-- //main content -->
 
-				<?php if($this->countModules('right')) : ?>
-				<!-- right sidebar -->
-				<div id="right-sidebar">
+                <?php if($this->countModules('right')) : ?>
+                <!-- right sidebar -->
+                <div id="right-sidebar">
                     <jdoc:include type="modules" name="right" style="68portal" />
-				</div>
-				<!-- //right sidebar -->
-				<?php endif; ?>
+                </div>
+                <!-- //right sidebar -->
+                <?php endif; ?>
 
-			</div>
-			<!-- //main -->
+            </div>
+            <!-- //main -->
 
-			<?php if ($this->params->get('copyright') != '' || $this->params->get('poweredby') == 'show') : ?>
-			<!-- footer -->
-			<div id="ie_clearing"> </div>
-			<div id="footer">
-				<?php if ($this->params->get('copyright') != '') : ?>
-				<p class="copyright">
-					<?php echo $this->params->get('copyright'); ?>
-				</p>
-				<?php endif; ?>
+            <?php if ($this->params->get('copyright') != '' || $this->params->get('poweredby') == 'show') : ?>
+            <!-- footer -->
+            <div id="ie_clearing"> </div>
+            <div id="footer">
+                <?php if ($this->params->get('copyright') != '') : ?>
+                <p class="copyright">
+                    <?php echo $this->params->get('copyright'); ?>
+                </p>
+                <?php endif; ?>
 
-				<?php if ($this->params->get('poweredby') == 'show') : ?>
-				<p class="joomla">
-					<?php echo JText::_('Powered by');?> <a href="http://www.joomla.org"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/images/joomla.gif" alt="Joomla! CMS" /></a>
-				</p>
-            	<?php endif; ?>
-			</div>
-			<!-- //footer -->
-			<?php endif; ?>
+                <?php if ($this->params->get('poweredby') == 'show') : ?>
+                <p class="joomla">
+                    <?php echo JText::_('Powered by');?> <a href="http://www.joomla.org"><img src="<?php echo $this->baseurl ?>/templates/<?php echo $this->template ?>/images/joomla.gif" alt="Joomla! CMS" /></a>
+                </p>
+                <?php endif; ?>
+            </div>
+            <!-- //footer -->
+            <?php endif; ?>
 
-		</div>
-		<!-- //content -->
+        </div>
+        <!-- //content -->
 
-		<div id="page-b">&nbsp;</div>
+        <div id="page-b">&nbsp;</div>
 
-	</div>
-	<!-- //shadow right -->
+    </div>
+    <!-- //shadow right -->
 
 </div>
 <!-- //shadow left -->
