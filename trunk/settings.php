@@ -28,7 +28,7 @@ else :
 	$layout = 'no-col';
 endif;
 
-
+/* modern modulestyle */
 if ($this->params->get('modulestyle') == 'modern') :
 	$layout .= ' modern';
 endif;
