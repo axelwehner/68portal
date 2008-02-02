@@ -8,45 +8,45 @@
 **/
 
 defined( '_JEXEC' ) or die('Restricted access');
+$editallowed = $this->user->authorize('com_content', 'edit', 'content', 'all')  || $this->user->authorize('com_content', 'edit', 'content', 'own');
 ?>
 
-<?php if ($this->user->authorize('com_content', 'edit', 'content', 'all')) : ?>
-	<div class="contentpaneopen_edit<?php echo $this->item->params->get( 'pageclass_sfx' ); ?>" style="float: left;">
-		<?php echo JHTML::_('icon.edit', $this->item, $this->item->params, $this->access); ?>
-	</div>
-<?php endif; ?>
+<?php if ($this->params->get('show_title') || $this->params->get('show_pdf_icon') || $this->params->get('show_print_icon') || $this->params->get('show_email_icon')) : ?>
+<div class="article<?php echo $this->params->get( 'pageclass_sfx' ); ?> article<?php echo $this->item->id; ?>">
 
-<?php if ($this->item->params->get('show_title') || $this->item->params->get('show_pdf_icon') || $this->item->params->get('show_print_icon') || $this->item->params->get('show_email_icon')) : ?>
-<div class="article<?php echo $this->item->params->get( 'pageclass_sfx' ); ?> article<?php echo $this->item->id; ?>">
-
-	<?php if ($this->item->params->get('show_pdf_icon') || $this->item->params->get('show_print_icon') || $this->item->params->get('show_email_icon')) : ?>
+	<?php if ( $editallowed || $this->params->get('show_pdf_icon') || $this->params->get('show_print_icon') || $this->params->get('show_email_icon')) : ?>
     <ul class="buttonheading">
 	<?php endif; ?>
-		<?php if ($this->item->params->get('show_pdf_icon')) : ?>
+		<?php if ($editallowed && !$this->print) : ?>
+		<li class="edit">
+			<?php echo JHTML::_('icon.edit', $this->item, $this->params, $this->access); ?>
+		</li>
+		<?php endif; ?>
+		<?php if ($this->params->get('show_pdf_icon')) : ?>
 		<li class="pdf">
-			<?php echo JHTML::_('icon.pdf', $this->item, $this->item->params, $this->access); ?>
+			<?php echo JHTML::_('icon.pdf', $this->item, $this->params, $this->access); ?>
 		</li>
 		<?php endif; ?>
 
-		<?php if ( $this->item->params->get( 'show_print_icon' )) : ?>
+		<?php if ( $this->params->get( 'show_print_icon' )) : ?>
 		<li class="print">
-			<?php echo JHTML::_('icon.print_popup', $this->item, $this->item->params, $this->access); ?>
+			<?php echo JHTML::_('icon.print_popup', $this->item, $this->params, $this->access); ?>
 		</li>
 		<?php endif; ?>
 
-		<?php if ($this->item->params->get('show_email_icon')) : ?>
+		<?php if ($this->params->get('show_email_icon')) : ?>
 		<li class="email">
-			<?php echo JHTML::_('icon.email', $this->item, $this->item->params, $this->access); ?>
+			<?php echo JHTML::_('icon.email', $this->item, $this->params, $this->access); ?>
 		</li>
 		<?php endif; ?>
-    <?php if ($this->item->params->get('show_pdf_icon') || $this->item->params->get('show_print_icon') || $this->item->params->get('show_email_icon')) : ?>
+    <?php if ($this->params->get('show_pdf_icon') || $this->params->get('show_print_icon') || $this->params->get('show_email_icon')) : ?>
 	</ul>
 	<?php endif; ?>
 
-	<?php if ($this->item->params->get('show_title')) : ?>
-	<h2 class="contentheading<?php echo $this->item->params->get( 'pageclass_sfx' ); ?>">
-		<?php if ($this->item->params->get('link_titles') && $this->item->readmore_link != '') : ?>
-		<a href="<?php echo $this->item->readmore_link; ?>" class="contentpagetitle<?php echo $this->item->params->get( 'pageclass_sfx' ); ?>">
+	<?php if ($this->params->get('show_title')) : ?>
+	<h2 class="contentheading<?php echo $this->params->get( 'pageclass_sfx' ); ?>">
+		<?php if ($this->params->get('link_titles') && $this->item->readmore_link != '') : ?>
+		<a href="<?php echo $this->item->readmore_link; ?>" class="contentpagetitle<?php echo $this->params->get( 'pageclass_sfx' ); ?>">
 			<?php echo $this->escape($this->item->title); ?>
 		</a>
 		<?php else : ?>
@@ -57,7 +57,7 @@ defined( '_JEXEC' ) or die('Restricted access');
 
 <?php endif; ?>
 
-	<?php  if (!$this->item->params->get('show_intro')) :
+	<?php  if (!$this->params->get('show_intro')) :
 		echo $this->item->event->afterDisplayTitle;
 	endif; ?>
 
@@ -65,30 +65,30 @@ defined( '_JEXEC' ) or die('Restricted access');
 
 	<ul class="meta">
 
-		<?php if (($this->item->params->get('show_section') && $this->item->sectionid) || ($this->item->params->get('show_category') && $this->item->catid)) : ?>
+		<?php if (($this->params->get('show_section') && $this->item->sectionid) || ($this->params->get('show_category') && $this->item->catid)) : ?>
 			<li class="section category">
-				<?php if ($this->item->params->get('show_section') && $this->item->sectionid && isset($this->item->section)) : ?>
+				<?php if ($this->params->get('show_section') && $this->item->sectionid && isset($this->item->section)) : ?>
 				<small class="section">
-					<?php if ($this->item->params->get('link_section')) : ?>
+					<?php if ($this->params->get('link_section')) : ?>
 					<?php echo '<a href="'.JRoute::_(ContentHelperRoute::getSectionRoute($this->item->sectionid)).'">'; ?>
 					<?php endif; ?>
 						<?php echo $this->item->section;
-					if ($this->item->params->get('link_section')) : ?></a>
+					if ($this->params->get('link_section')) : ?></a>
 					<?php endif; ?>
 				</small>
 				<?php endif; ?>
 
-                <?php if ($this->item->params->get('show_category')) : ?>
+                <?php if ($this->params->get('show_category')) : ?>
 					<?php echo ' - '; ?>
 				<?php endif; ?>
 
-				<?php if ($this->item->params->get('show_category') && $this->item->catid) : ?>
+				<?php if ($this->params->get('show_category') && $this->item->catid) : ?>
 				<small class="category">
-					<?php if ($this->item->params->get('link_category')) : ?>
+					<?php if ($this->params->get('link_category')) : ?>
 					<?php echo '<a href="'.JRoute::_(ContentHelperRoute::getCategoryRoute($this->item->catslug, $this->item->sectionid)).'">'; ?>
 					<?php endif; ?>
 						<?php echo $this->item->category; ?>
-					<?php if ($this->item->params->get('link_section')) : ?>
+					<?php if ($this->params->get('link_section')) : ?>
 					</a>
 					<?php endif; ?>
 				</small>
@@ -96,25 +96,25 @@ defined( '_JEXEC' ) or die('Restricted access');
 			</li>
 		<?php endif; ?>
 
-    	<?php if ($this->item->params->get('show_create_date')) : ?>
+    	<?php if ($this->params->get('show_create_date')) : ?>
 		<li class="date createdate">
 			<small><?php echo JHTML::_('date', $this->item->created, JText::_('DATE_FORMAT_LC2')); ?></small>
 		</li>
 		<?php endif; ?>
 
-    	<?php if ( intval($this->item->modified) != 0 && $this->item->params->get('show_modify_date')) : ?>
+    	<?php if ( intval($this->item->modified) != 0 && $this->params->get('show_modify_date')) : ?>
 		<li class="date modifydate">
 			<small><?php echo JText::_( 'Last Updated' ); ?> ( <?php echo JHTML::_('date', $this->item->modified, JText::_('DATE_FORMAT_LC2')); ?> )</small>
 		</li>
 		<?php endif; ?>
 
-		<?php if (($this->item->params->get('show_author')) && ($this->item->author != "")) : ?>
+		<?php if (($this->params->get('show_author')) && ($this->item->author != "")) : ?>
 		<li class="author">
 			<small><?php JText::printf( 'Written by', ($this->item->created_by_alias ? $this->item->created_by_alias : $this->item->author) ); ?></small>
 		</li>
 		<?php endif; ?>
 
-		<?php if ($this->item->params->get('show_url') && $this->item->urls) : ?>
+		<?php if ($this->params->get('show_url') && $this->item->urls) : ?>
 		<li class="url">
 			<small><a href="http://<?php echo $this->item->urls ; ?>" target="_blank"><?php echo $this->item->urls; ?></a></small>
 		</li>

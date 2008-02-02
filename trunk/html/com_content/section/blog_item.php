@@ -8,20 +8,20 @@
 **/
 
 defined( '_JEXEC' ) or die('Restricted access');
+$editallowed = $this->user->authorize('com_content', 'edit', 'content', 'all')  || $this->user->authorize('com_content', 'edit', 'content', 'own');
 ?>
-
-<?php if ($this->user->authorize('com_content', 'edit', 'content', 'all')) : ?>
-	<div class="contentpaneopen_edit<?php echo $this->item->params->get( 'pageclass_sfx' ); ?>" style="float: left;">
-		<?php echo JHTML::_('icon.edit', $this->item, $this->item->params, $this->access); ?>
-	</div>
-<?php endif; ?>
 
 <?php if ($this->item->params->get('show_title') || $this->item->params->get('show_pdf_icon') || $this->item->params->get('show_print_icon') || $this->item->params->get('show_email_icon')) : ?>
 <div class="article<?php echo $this->item->params->get( 'pageclass_sfx' ); ?> article<?php echo $this->item->id; ?>">
 
-	<?php if ($this->item->params->get('show_pdf_icon') || $this->item->params->get('show_print_icon') || $this->item->params->get('show_email_icon')) : ?>
+	<?php if ( $editallowed || $this->item->params->get('show_pdf_icon') || $this->item->params->get('show_print_icon') || $this->item->params->get('show_email_icon')) : ?>
     <ul class="buttonheading">
 	<?php endif; ?>
+		<?php if ($editallowed && !$this->print) : ?>
+		<li class="edit">
+			<?php echo JHTML::_('icon.edit', $this->item, $this->params, $this->access); ?>
+		</li>
+		<?php endif; ?>
 		<?php if ($this->item->params->get('show_pdf_icon')) : ?>
 		<li class="pdf">
 			<?php echo JHTML::_('icon.pdf', $this->item, $this->item->params, $this->access); ?>
